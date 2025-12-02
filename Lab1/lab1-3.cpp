@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+findSum(int arr[], int size) {
+    if (size <= 0)
+        return 0;
+    else
+        return arr[size - 1] + findSum(arr, size - 1);
+}
+int main() {
+    int arr[10]={0,1,2,3,4,5,6,7,8,9};
+
+    cout << "Sum of array elements = " << findSum(arr,10) << endl;
+}
