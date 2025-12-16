@@ -15,7 +15,13 @@ int main() {
     std::string line;
     while (std::getline(file, line)) {
         std::cout << line << std::endl;
-        pos = line.find("love");
+        // transform line to lowercase for case-insensitive search
+        std::string lowerLine = line;
+        for (char& c : lowerLine) {
+            c = std::tolower(c);
+        }
+
+        pos = lowerLine.find("love");
         if (pos >= line.length()) {
             std::cout << "'love' not found in the line." << std::endl;
         } else {
