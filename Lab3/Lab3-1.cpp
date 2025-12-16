@@ -3,7 +3,7 @@
 #include <string>
 
 int main() {
-    int pos;
+    int pos, pos2;
     std::ifstream file("Subject.txt");
     
     // Check if file opened successfully
@@ -22,11 +22,24 @@ int main() {
         }
 
         pos = lowerLine.find("love");
+        
         if (pos >= line.length()) {
             std::cout << "'love' not found in the line." << std::endl;
         } else {
             std::cout << "'love' found at position: " << pos << std::endl;
         }
+
+        // tokenize the line into words
+        size_t start = 0;
+        size_t end = line.find(' ');
+        bool foundWord = false;
+        while (end != std::string::npos) {
+            std::string word = line.substr(start, end - start);
+            start = end + 1;
+            end = lowerLine.find(' ', start);
+            std::cout << "Token: " << word << std::endl;
+        }
+
     }
     
     file.close();
