@@ -5,10 +5,13 @@ using namespace std;
 int main() {
     int arr[] = {1, 3, 5, 7, 9};
 
-    if (binary_search(arr, arr + 5, 7))
-        cout << "Found";
-    else
+    int* it = lower_bound(arr, arr + 5, 7);
+
+    if (it != arr + 5 && *it == 7) {
+        cout << "Found at index " << (it - arr);
+    } else {
         cout << "Not found";
+    }
 
     return 0;
 }
