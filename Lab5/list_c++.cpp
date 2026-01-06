@@ -6,20 +6,19 @@ using namespace std;
 
 int main() {
   stack<char> s;
-  cout << s.empty() << endl;                     // currently s is empty, true (1)
-  cout << "==================" << endl;
+
+  s.push('t');
   s.push('a');
-  s.push('b');
-  s.push('c');
-  // stack is LIFO, thus the content of s is currently like this:
-  // c <- top
-  // b
-  // a
-  cout << s.top() << endl;                       // output 'c'
-  s.pop();                                       // pop topmost
-  cout << s.top() << endl;                       // output 'b'
-  cout << s.empty() << endl;                     // output false (0)
-  cout << "==================" << endl;
+  s.push('w');
+  s.push('u');
+  s.push('s');
+  for (int i=0;i<5;i++) {
+    cout << s.top() << endl;
+    s.pop();
+  } 
+
+  cout << "-------------------" << endl;                 // output 'b'
+
   queue<char> q;
   cout << q.empty() << endl;                     // output true (1)
   cout << "==================" << endl;
